@@ -1,0 +1,49 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Oct 19 11:03:01 2024
+
+@author: Administrator
+"""
+print("=========Selamat Datang di Kalkulator determinan Hans========")
+import cmath
+
+# Fungsi untuk menghitung akar persamaan kuadrat
+def akar_kuadrat(a, b, c):
+  # Menghitung diskriminan
+  diskriminan = (b**2) - 4*(a*c)
+
+  # Menghitung akar-akar
+  akar1 = (-b - cmath.sqrt(diskriminan)) / (2*a)
+  akar2 = (-b + cmath.sqrt(diskriminan)) / (2*a)
+
+  return akar1, akar2
+
+# Fungsi untuk menghitung determinan
+def determinan(a, b, c):
+  return (b**2) - 4*(a*c)
+
+# Input koefisien
+a = float(input("Masukkan nilai A: "))
+b = float(input("Masukkan nilai B: "))
+c = float(input("Masukkan nilai C: "))
+
+# Menghitung akar-akar dan determinan
+akar1, akar2 = akar_kuadrat(a, b, c)
+det = determinan(a, b, c)
+
+# Menampilkan hasil
+print("Persamaan kuadrat:", a, "x² +", b, "x +", c)
+print("Determinannya =", det)
+
+# Menampilkan akar-akar
+if det >= 0:
+  print("Memiliki Akar Real")
+  print("Akar x1 =", akar1.real)
+  print("Akar x2 =", akar2.real)
+else:
+  print("Memiliki Akar Kompleks")
+  print("Akar x1 =", akar1)
+  print("Akar x2 =", akar2)
+  
+  print("=========Terimakasih telah menggunakan program ini========")
+      
