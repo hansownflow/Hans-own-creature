@@ -1,0 +1,33 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Oct 19 10:47:36 2024
+
+@author: Hans
+"""
+
+def jenis_segitiga(a, b, c):
+  
+  # rumus-rumus
+  if a + b <= c or a + c <= b or b + c <= a:
+    return "Bukan Segitiga"
+  if a == b == c:
+    return "Segitiga Sama Sisi"
+  elif a == b or a == c or b == c:
+    return "Segitiga Sama Kaki"
+  elif a**2 + b**2 == c**2 or a**2 + c**2 == b**2 or b**2 + c**2 == a**2:
+    return "Segitiga Siku-Siku"
+  else:
+    return "Segitiga Sembarang"
+
+# inputan yang diberikan user
+print("=========Selamat Datang di Kalkulator segitiga Hans========")
+a = int(input("Masukkan panjang sisi a: "))
+b = int(input("Masukkan panjang sisi b: "))
+c = int(input("Masukkan panjang sisi c: "))
+
+# Panggil fungsi untuk menentukan jenis segitiga
+jenis = jenis_segitiga(a, b, c)
+
+# Cetak hasil
+print(f"Jenis segitiga: {jenis}\n"
+      f"========Terimakasih========")
